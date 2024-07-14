@@ -1,18 +1,29 @@
 import React from 'react';
 import styled from "styled-components";
 import {theme} from "../styles/Theme.styled";
+import {Icon} from "./icon/Icon";
 
 type Props = {
     labelText:string
     type: 'text' | 'password'
+    value: string
+    onChange: (value:string) => void
+    error?: string
+    touched?: boolean;
 }
 
 export const TextFiled = (props:Props) => {
-    const {labelText, type} = props
+    const {labelText, type, value, error, onChange, touched} = props
     return (
         <StyledWrapper>
-            <Input type={type} id='textFiled' placeholder={labelText}/>
+            <Input type={type} id='textFiled' placeholder={labelText} value={value}
+                   onChange={(e) => onChange(e.target.value)}
+                   aria-invalid={!!error}/>
             <Label htmlFor="textFiled">{labelText}</Label>
+            {touched && (error?.length! > 0
+                ? <ErrorIconContainer><Icon iconId={'error'} width={'20px'} height={'20px'} viewBox={'0 0 20 20'}/></ErrorIconContainer>
+                : <ErrorIconContainer><Icon iconId={'sucsefull'} width={'20px'} height={'20px'} viewBox={'0 0 20 20'}/></ErrorIconContainer>)}
+            {error && <ErrorMassage>{error}</ErrorMassage>}
         </StyledWrapper>
     );
 };
@@ -79,4 +90,14 @@ const Label = styled.label`
     pointer-events: none;
     transition: 0.2s;
     color: ${theme.color.gray.gray}
+`
+const ErrorIconContainer = styled.div`
+    position: absolute;
+    top: 22px;
+    right: 22px;
+`
+const ErrorMassage = styled.div`
+    position: absolute;
+    bottom: -1.5rem;
+    color: ${theme.color.dangerous};
 `
