@@ -36,7 +36,7 @@ const StyledFaq = styled.div`
         max-width: 342px;
         width: 100%;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 76px;
         max-width: 342px;
         width: 100%;
@@ -62,7 +62,7 @@ const FaqTitle = styled.h3`
 `
 const FaqText = styled.p`
     color: ${theme.color.gray.darkGray};
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
+    font-weight: ${theme.typography.body14.weight};
+    font-size: ${theme.typography.body14.size};
+    line-height: ${theme.typography.body14.lineHeight};
 `

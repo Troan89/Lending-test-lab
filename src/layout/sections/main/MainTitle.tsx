@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {theme} from "../../../styles/Theme.styled";
+import {Typography} from "../../../components/ui/Typography";
 
 export const MainTitle = () => {
     return (
@@ -11,7 +12,10 @@ export const MainTitle = () => {
                         <TitleH1>
                             Говорят, никогда не поздно сменить профессию
                         </TitleH1>
-                        <TitleH4>Сделай круто тестовое задание и у тебя получится</TitleH4>
+                        {/*<Typography variant={'headline1'}>*/}
+                        {/*    Говорят, никогда не поздно сменить профессию*/}
+                        {/*</Typography>*/}
+                        <Body18>Сделай круто тестовое задание и у тебя получится</Body18>
                     </GroupTitle>
 
                     <Button>
@@ -50,7 +54,7 @@ const StyledMain = styled.div`
     @media ${theme.media.tablet} {
         min-height: 944px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 516px;
     }
     @media ${theme.media.miniMobile} {
@@ -59,28 +63,31 @@ const StyledMain = styled.div`
 `
 
 const TitleH1 = styled.p`
-    font-weight: var(--headline1-weight);
-    line-height: var(--headline1-line-height);
-    font-size: var(--headline1-size);
+    font-weight: ${theme.typography.headline1.weight};
+    line-height: ${theme.typography.headline1.lineHeight};
+    font-size: ${theme.typography.headline1.size};
 
     @media ${theme.media.tablet} {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: ${theme.typography.headline3.size};
+        line-height: ${theme.typography.headline3.lineHeight};
+        font-weight: ${theme.typography.headline3.weight};
     }
-    @media screen and (max-width: 375px) {
-        font-size: 24px;
-        line-height: 32px;
+    @media ${theme.media.mobile} {
+        font-size: ${theme.typography.headline4.size};
+        line-height: ${theme.typography.headline4.lineHeight};
+        font-weight: ${theme.typography.headline4.weight};
     }
 
 `
-const TitleH4 = styled.p`
-    font-weight: var(--headline4-weight);
-    line-height: var(--headline4-line-height);
-    font-size: var(--headline4-size);
+const Body18 = styled.p`
+    font-weight: ${theme.typography.body18.weight};
+    line-height: ${theme.typography.body18.lineHeight};
+    font-size: ${theme.typography.body18.size};
 
-    @media screen and (max-width: 768px) {
-        font-size: 16px;
-        line-height: 28px;
+    @media ${theme.media.tablet} {
+        font-weight: ${theme.typography.body16.weight};
+        line-height: ${theme.typography.body16.lineHeight};
+        font-size: ${theme.typography.body16.size};
     }
 `
 const GroupTitle = styled.div`
@@ -95,13 +102,13 @@ const Button = styled.button`
     border-radius: 4px;
     padding: 20px 40px;
     gap: 10px;
-    background-color: var(--lightGray-color);
+    background-color: ${theme.color.gray.lightGray};
     z-index: 99;
 `
 const H5 = styled.p`
-    font-weight: var(--headline5-weight);
-    font-size: var(--headline5-size);
-    line-height: var(--headline5-line-height);
+    font-weight: ${theme.typography.headline5.weight};
+    font-size: ${theme.typography.headline5.size};
+    line-height: ${theme.typography.headline5.lineHeight};
     text-align: center;
-    color: var(--dark-color);
+    color: ${theme.color.dark};
 `

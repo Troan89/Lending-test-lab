@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
-import {theme} from "../styles/Theme.styled";
-import {Icon} from "./icon/Icon";
+import {theme} from "../../styles/Theme.styled";
+import {Icon} from "../icon/Icon";
 
 type Props = {
     labelText:string
@@ -56,7 +56,9 @@ const Input = styled.input`
     height: 100%;
     border: none;
     border-radius: 4px;
-    font-size: 18px;
+    font-weight: ${theme.typography.body18.bold};
+    font-size: ${theme.typography.body18.size};
+    line-height: ${theme.typography.body18.lineHeight};
     outline: none;
     vertical-align: top;
     padding-inline-end: revert;
@@ -84,9 +86,9 @@ const Label = styled.label`
     position: absolute;
     left: 16px;
     top: 16px;
-    font-size: 18px;
-    line-height: 32px;
-    font-weight: 400;
+    font-weight: ${theme.typography.body18.bold};
+    font-size: ${theme.typography.body18.size};
+    line-height: ${theme.typography.body18.lineHeight};
     pointer-events: none;
     transition: 0.2s;
     color: ${theme.color.gray.gray}

@@ -35,7 +35,7 @@ const StyledWrapper = styled.section`
         min-height: 984px;
     }
 
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 375px;
         min-height: 1589px;
     }
@@ -68,7 +68,7 @@ const StyledItem = styled.div`
         max-width: 728px;
         min-height: 190px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 343px;
         width: 100%;
         min-height: 302px;
@@ -76,13 +76,13 @@ const StyledItem = styled.div`
 `
 
 const Title = styled.p`
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 32px;
+    font-weight: ${theme.typography.body18.bold};
+    font-size: ${theme.typography.body18.size};
+    line-height: ${theme.typography.body18.lineHeight};
 `
 
 const Text = styled.p`
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 28px;
+    font-size: ${theme.typography.body16.size};
+    line-height: ${theme.typography.body16.lineHeight};
+    font-weight: ${theme.typography.body16.weight};
 `

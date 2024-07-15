@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import {theme} from "../../styles/Theme.styled";
 
 type Props = {
     menuItems: string[]
@@ -30,8 +31,9 @@ const StyledMenu = styled.nav`
         list-style: none;
         padding: 0;
         margin: 0; 
-        font-size: 16px;
-        font-weight: 400;
+        font-size: ${theme.typography.body16.size};
+        font-weight: ${theme.typography.body16.weight};
+        line-height: ${theme.typography.body16.lineHeight};
         
 
         @media (max-width: 768px) {
@@ -51,7 +53,7 @@ const StyledMenu = styled.nav`
     }
 
     li a:hover {
-        color: var(--white-color);
+        color: ${theme.color.white};
         text-decoration: underline; 
     }
 `

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Icon} from "../icon/Icon";
 import styled from "styled-components";
+import {theme} from "../../styles/Theme.styled";
 
 export const Logo = () => {
     return (
@@ -30,9 +31,9 @@ const StyledLogo = styled.div`
     
     p {
         margin-left: 40px; /* Расстояние между иконками и текстом */
-        line-height: var(--headline5-line-height);
-        font-size: var(--headline5-size);
-        font-weight: var(--headline5-weight);
+        line-height: ${theme.typography.headline5.lineHeight};
+        font-size: ${theme.typography.headline5.size};
+        font-weight: ${theme.typography.headline5.weight};
     }
 `
 
@@ -45,3 +46,4 @@ const IconWrapper = styled.div<{offset?:boolean}>`
     position: absolute;
     left: ${({ offset }) => (offset ? '13px' : '0')};
 `;
+

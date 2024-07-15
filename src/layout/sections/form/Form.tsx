@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import {SectionTitile} from "../../../components/SectionTitile";
+import {SectionTitile} from "../../../components/ui/SectionTitile";
 import {FlexWrapper} from "../../../components/FlexWrapper";
-import {TextFiled} from "../../../components/TextFiled";
+import {TextFiled} from "../../../components/ui/TextFiled";
 import {theme} from "../../../styles/Theme.styled";
 
 export const Form = () => {
@@ -117,7 +117,7 @@ const StyledForm = styled.section`
         max-width: 728px;
         min-height: 246px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 343px;
         min-height: 342px;
     }
@@ -147,7 +147,7 @@ const TextFiledContainer = styled.div`
     @media ${theme.media.tablet} {
         gap: 24px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         flex-wrap: wrap;
         gap: 20px;
     }
@@ -165,7 +165,7 @@ const CheckboxContainer = styled.div`
     @media ${theme.media.tablet} {
         gap: 24px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         flex-wrap: wrap;
         gap: 20px;
     }
@@ -194,9 +194,9 @@ const Checkbox = styled.div`
 
 `
 const Label = styled.label`
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
+    font-size: ${theme.typography.body16.size};
+    line-height: ${theme.typography.body16.lineHeight};
+    font-weight: ${theme.typography.body16.weight};
 `
 
 const Button = styled.button`
@@ -211,6 +211,7 @@ const Button = styled.button`
     font-size: ${theme.typography.headline5.size};
     line-height: ${theme.typography.headline5.lineHeight};
     font-weight: ${theme.typography.headline5.weight};
+    cursor: pointer;
 
     @media ${theme.media.tablet} {
         max-width: 352px;

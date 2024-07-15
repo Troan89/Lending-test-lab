@@ -15,11 +15,14 @@ const StyledFooter = styled.footer`
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: ${theme.typography.body18.weight};
+    font-size: ${theme.typography.body18.size};
+    line-height: ${theme.typography.body18.lineHeight};
     
     @media ${theme.media.tablet} {
         max-width: 768px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 375px;
     }
     @media ${theme.media.miniMobile} {

@@ -13,8 +13,6 @@ import smallImage from '../../assets/Lunch_atop_a_Skyscraper (320x509).png'
 
 const items = ["Как это работает", "3-й блок", "Вопросы и ответы", "Форма"]
 
-// const defaultImage = require('../../assets/Lunch_atop_a_Skyscraper.png');
-
 export const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const toggleMenu = () => {
@@ -91,7 +89,7 @@ const StyledWrapper = styled.header`
                 min-height: 1024px;
                 max-width: 768px;
             }
-            @media ${theme.media.mobale} {
+            @media ${theme.media.mobile} {
                 min-height: 596px;
                 max-width: 375px;
             }
@@ -124,7 +122,7 @@ const StyledWrapper = styled.header`
         min-height: 1024px;
         max-width: 768px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 596px;
         max-width: 375px;
     }

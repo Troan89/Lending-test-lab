@@ -103,7 +103,7 @@ const SliderWrapper = styled.div`
         color: ${theme.color.primary.primary};
         padding-top: 50px;
 
-        @media ${theme.media.mobale} {
+        @media ${theme.media.mobile} {
             padding-top: 20px;
         }
 
@@ -114,7 +114,7 @@ const SliderWrapper = styled.div`
         min-height: 419px;
         padding: 0 20px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 375px;
         min-height: 326px;
         padding: 0 19px 0 16px;
@@ -142,7 +142,7 @@ const CardWrapper = styled.div`
         max-width: 351px;
         //margin: 0 20px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 340px;
         min-height: 281px;
         height: 100%;
@@ -165,7 +165,7 @@ const Card = styled.div`
     max-width: 341px;
     min-height: 316px;
     
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 340px;
         min-height: 281px;
         padding: 22px 22px 27px 22px;
@@ -209,15 +209,15 @@ const Name = styled.h3`
 `;
 
 const City = styled.p`
-    font-size: 12px;
-    line-height: 16px;
+    font-size: ${theme.typography.body12.size};
+    line-height: ${theme.typography.body12.lineHeight};
     color: ${theme.color.gray.darkGray};
-    font-weight: 400;
+    font-weight: ${theme.typography.body12.weight};
 `;
 
 const Feedback = styled.p`
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 400;
+    font-size: ${theme.typography.body14.size};
+    line-height: ${theme.typography.body14.lineHeight};
+    font-weight: ${theme.typography.body14.weight};
 `;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {SectionTitile} from "../../../components/SectionTitile";
+import {SectionTitile} from "../../../components/ui/SectionTitile";
 import {Faq} from "./faq/Faq";
 import {theme} from "../../../styles/Theme.styled";
 import {GridWrapper} from "../../../components/GridWrapper";
@@ -44,7 +44,7 @@ const StyledFaqs = styled.section`
         max-width: 718px;
         gap: 42px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 458px;
         max-width: 342px;
         gap: 26px;

@@ -18,9 +18,9 @@ export const theme = {
         }
     },
     media: {
-        desktop: "screen and (max-width: 1920px) and (min-width: 769px)",
-        tablet: "screen and (max-width: 768px) and (min-width: 376px)",
-        mobale: "screen and (max-width: 375px) and (min-width: 321px)",
+        desktop: "screen and (max-width: 1920px)",
+        tablet: "screen and (max-width: 768px)",
+        mobile: "screen and (max-width: 375px)",
         miniMobile: "screen and (max-width: 320px)"
     },
     typography: {
@@ -28,6 +28,7 @@ export const theme = {
             weight: 600,
             size: '52px',
             lineHeight: '64px',
+
         },
         headline2: {
             weight: 600,
@@ -53,6 +54,35 @@ export const theme = {
             weight: 600,
             size: '16px',
             lineHeight: '24px',
+        },
+        caption12: {
+            weight: 400,
+            size: '12px',
+            lineHeight: '24px',
+        },
+        body12: {
+            weight: 400,
+            bold: 600,
+            size: '12px',
+            lineHeight: '16px',
+        },
+        body14: {
+            weight: 400,
+            bold: 600,
+            size: '14px',
+            lineHeight: '24px',
+        },
+        body16: {
+            weight: 400,
+            bold: 600,
+            size: '16px',
+            lineHeight: '28px',
+        },
+        body18: {
+            weight: 400,
+            bold: 600,
+            size: '18px',
+            lineHeight: '32px',
         },
     }
 }

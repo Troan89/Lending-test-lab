@@ -38,7 +38,7 @@ const StyledThirdBlock = styled.section`
         gap: 24px;
     }
 
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 509px;
         max-width: 345px;
         margin: 0 17px;
@@ -64,7 +64,7 @@ const Title = styled.div`
         line-height: ${theme.typography.headline5.lineHeight};
         font-weight: ${theme.typography.headline5.weight};
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         text-align: center;
         font-size: ${theme.typography.headline5.size};
         line-height: ${theme.typography.headline5.lineHeight};
@@ -79,12 +79,12 @@ const Title = styled.div`
 `
 
 const Text = styled.div`
-    font-size: 16px;
-    line-height: 28px;
-    font-weight: 400;
+    font-size: ${theme.typography.body16.size};
+    line-height: ${theme.typography.body16.lineHeight};
+    font-weight: ${theme.typography.body16.weight};
     color: ${theme.color.gray.darkGray};
 
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         text-align: center;
     }
     @media ${theme.media.miniMobile} {
@@ -101,7 +101,7 @@ const ImgWrapper = styled.div`
         min-height: 265px;
         max-width: 351px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 258px;
         max-width: 342px;
     }
@@ -119,7 +119,7 @@ const Img = styled.img`
         min-height: 265px;
         max-width: 351px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 258px;
         max-width: 342px;
     }
@@ -139,7 +139,7 @@ const ImgOverlay = styled.img`
         min-height: 265px;
         max-width: 351px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         min-height: 258px;
         max-width: 342px;
     }

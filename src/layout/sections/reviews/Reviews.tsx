@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {SectionTitile} from "../../../components/SectionTitile";
+import {SectionTitile} from "../../../components/ui/SectionTitile";
 import {theme} from "../../../styles/Theme.styled";
 import {useAppSelector} from "../../../store/store";
 import {Review} from "./review/Review";
@@ -30,7 +30,7 @@ const StyledWrapper = styled.section`
         width: 100%;
         min-height: 540px;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 375px;
         width: 100%;
         min-height: 451px;
@@ -60,7 +60,7 @@ const StyledSlider = styled.div`
         margin-top: 33px;
         margin-bottom: 0;
     }
-    @media ${theme.media.mobale} {
+    @media ${theme.media.mobile} {
         max-width: 375px;
         width: 100%;
         min-height: 451px;
