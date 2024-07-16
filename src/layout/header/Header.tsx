@@ -10,6 +10,7 @@ import defaultImage from '../../assets/Lunch_atop_a_Skyscraper.png'
 import largeImage from '../../assets/Lunch_atop_a_Skyscraper (768x1024).png'
 import mediumImage from '../../assets/Lunch_atop_a_Skyscraper (375x596).png'
 import smallImage from '../../assets/Lunch_atop_a_Skyscraper (320x509).png'
+import {TabMenu} from "./tabMenu/TabMenu";
 
 const items = ["Как это работает", "3-й блок", "Вопросы и ответы", "Форма"]
 
@@ -49,7 +50,7 @@ export const Header = () => {
                             <CloseButton onClick={toggleMenu}>X</CloseButton>
                         </MenuHeader>
                         <FlexWrapper direction={"column"}>
-                                <Menu menuItems={items} color={'var(--gray-color)'}/>
+                                <TabMenu menuItems={items} color={'var(--gray-color)'}/>
                         </FlexWrapper>
 
                     </MenuWrapper>
@@ -199,12 +200,26 @@ const MenuHeader = styled.div`
     align-items: center;
     color: black;
     min-height: 80px;
+    
+    position: relative;
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        height: 1px;
+        width: 100%;
+        background-color: ${theme.color.gray.lightGray};
+
+        position: absolute;
+        bottom: 0;
+    }
 `;
 
 const CloseButton = styled.div`
     font-size: 24px;
     cursor: pointer;
     color: black;
+    margin-right: 15px;
 `;
 
 
