@@ -15,12 +15,12 @@ export function App() {
     return (
         <StyledApp>
             <Header/>
-            <section id="faqs"><Faqs/></section>
-            <section id="thirdBlock"><ThirdBlock/></section>
+            <Faqs/>
+            <ThirdBlock/>
             <Reviews/>
-            <section id="fourthBlock"><FourthBlock/></section>
+            <FourthBlock/>
             <FiveBlock/>
-            <section id="form"><Form/></section>
+            <Form/>
             <Footer/>
         </StyledApp>
     );

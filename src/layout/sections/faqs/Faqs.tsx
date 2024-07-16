@@ -7,7 +7,7 @@ import {GridWrapper} from "../../../components/GridWrapper";
 
 export const Faqs = () => {
     return (
-        <StyledFaqs>
+        <StyledFaqs id="faqs">
             <SectionTitile>Как это работает</SectionTitile>
             <GridWrapper gap={"32px"}>
                 <Faq

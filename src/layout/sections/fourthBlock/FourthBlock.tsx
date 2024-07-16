@@ -15,7 +15,7 @@ export const FourthBlock = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
     return (
-        <StyledSection>
+        <StyledSection id="fourthBlock">
             <SectionTitile>Вопросы и ответы</SectionTitile>
             <FlexWrapper direction={'column'} gap={'24px'}>
                 {items.map((item, index) => (

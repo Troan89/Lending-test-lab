@@ -7,7 +7,7 @@ import human from '../../../assets/img/2_1.png'
 
 export const ThirdBlock = () => {
     return (
-        <StyledThirdBlock>
+        <StyledThirdBlock id="thirdBlock">
             <FlexWrapper direction={'column'} gap={'18px'}>
                 <Title>Круто, ты дошел до третьего блока</Title>
                 <Text>63% опрошенных пользовались кредитами из-за того, что не могли покрыть непредвиденные расходы

@@ -194,7 +194,7 @@ const MenuWrapper = styled.div`
     right: 0;
     max-width: 320px;
     width: 100%;
-    min-height: 667px;
+    min-height: 450px;
     background: ${theme.color.white};
     z-index: 10000;
     padding: 0 20px;

@@ -70,7 +70,7 @@ export const Form = () => {
     };
 
     return (
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm onSubmit={handleSubmit} id="form">
             <FlexWrapper direction={'column'} justify={'space-between'}>
                 <SectionTitile>Отправь форму</SectionTitile>
                 <FormContainer>
