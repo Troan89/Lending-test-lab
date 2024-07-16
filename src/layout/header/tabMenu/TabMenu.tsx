@@ -4,8 +4,13 @@ import {theme} from "../../../styles/Theme.styled";
 import {Icon} from "../../../components/icon/Icon";
 
 type Props = {
-    menuItems: string[]
-    color?:string
+    menuItems: Item[]
+    color?: string
+}
+
+type Item = {
+    name:string
+    id:string
 }
 
 export const TabMenu = (props: Props) => {
@@ -13,7 +18,9 @@ export const TabMenu = (props: Props) => {
 
     const menu = menuItems.map((item, index) => (
         <ListItem key={index}>
-            <Link href="">{item}</Link>
+            <Link href={`#${item.id}`}>
+                {item.name}
+            </Link>
             <StyledIconTransform>
                 <Icon iconId={'fi-sr-angle-left'} width={'12px'} height={'24px'} />
             </StyledIconTransform>
@@ -89,7 +96,7 @@ const ListItem = styled.li`
 `
 
 const Link = styled.a`
-
+    //z-index: 1;
 `
 
 const StyledIconTransform = styled.div`

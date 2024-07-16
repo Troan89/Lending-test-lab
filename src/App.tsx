@@ -15,12 +15,12 @@ export function App() {
     return (
         <StyledApp>
             <Header/>
-                <Faqs/>
-                <ThirdBlock/>
-                <Reviews/>
-                <FourthBlock/>
-                <FiveBlock/>
-                <Form/>
+            <section id="faqs"><Faqs/></section>
+            <section id="thirdBlock"><ThirdBlock/></section>
+            <Reviews/>
+            <section id="fourthBlock"><FourthBlock/></section>
+            <FiveBlock/>
+            <section id="form"><Form/></section>
             <Footer/>
         </StyledApp>
     );
@@ -32,8 +32,8 @@ const StyledApp = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
-   @media screen and (max-width: 768px) {
-       row-gap: 56px;
-   }
+
+    @media screen and (max-width: 768px) {
+        row-gap: 56px;
+    }
 `

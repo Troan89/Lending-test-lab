@@ -12,7 +12,12 @@ import mediumImage from '../../assets/Lunch_atop_a_Skyscraper (375x596).png'
 import smallImage from '../../assets/Lunch_atop_a_Skyscraper (320x509).png'
 import {TabMenu} from "./tabMenu/TabMenu";
 
-const items = ["Как это работает", "3-й блок", "Вопросы и ответы", "Форма"]
+const items = [
+    { name: "Как это работает", id: "faqs" },
+    { name: "Вопросы и ответы", id: "fourthBlock" },
+    { name: "3-й блок", id: "thirdBlock" },
+    { name: "Форма", id: "form" }
+];
 
 export const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -140,6 +145,8 @@ const StyledHeader = styled.div`
     justify-content: space-around;
     min-height: 80px;
     z-index: 1;
+    
+    position: relative;
 
     @media screen and (max-width: 768px) {
         justify-content: space-between;
@@ -182,14 +189,14 @@ const BurgerMenu = styled.div`
 `
 
 const MenuWrapper = styled.div`
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     max-width: 320px;
     width: 100%;
     min-height: 667px;
     background: ${theme.color.white};
-    z-index: 100;
+    z-index: 10000;
     padding: 0 20px;
     transition: .5s;
 `;
