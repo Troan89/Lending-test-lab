@@ -61,15 +61,6 @@ const StyledMenu = styled.nav`
         text-decoration: none;
         color: ${({color}) => color || 'var(--white-color)'}};
         transition: color 0.3s, text-decoration 0.3s;
-
-        @media (max-width: 768px) {
-            color: white;
-        }   
-    }
-
-    li a:hover {
-        color: ${theme.color.white};
-        text-decoration: underline; 
     }
 `
 

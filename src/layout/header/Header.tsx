@@ -144,7 +144,7 @@ const StyledHeader = styled.div`
     align-items: center;
     justify-content: space-around;
     min-height: 80px;
-    z-index: 1;
+    z-index: 10;
     
     position: relative;
 
@@ -194,19 +194,15 @@ const MenuWrapper = styled.div`
     right: 0;
     max-width: 320px;
     width: 100%;
-    //min-height: 450px;
-    min-height: 100vh; /* Измените на 100vh */
+    min-height: 667px;
     background: ${theme.color.white};
     z-index: 10000;
-    //padding: 0 20px;
     transition: .5s;
+    padding: 20px;
 
-    padding: 20px; /* Увеличьте padding */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавьте тень для видимости */
+    display: flex; 
+    flex-direction: column;
 
-    display: flex; /* Обновлено */
-    flex-direction: column; /* Обновлено */
-    overflow: auto;
 `;
 
 const MenuHeader = styled.div`
