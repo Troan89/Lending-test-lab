@@ -194,11 +194,19 @@ const MenuWrapper = styled.div`
     right: 0;
     max-width: 320px;
     width: 100%;
-    min-height: 450px;
+    //min-height: 450px;
+    min-height: 100vh; /* Измените на 100vh */
     background: ${theme.color.white};
     z-index: 10000;
-    padding: 0 20px;
+    //padding: 0 20px;
     transition: .5s;
+
+    padding: 20px; /* Увеличьте padding */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Добавьте тень для видимости */
+
+    display: flex; /* Обновлено */
+    flex-direction: column; /* Обновлено */
+    overflow: auto;
 `;
 
 const MenuHeader = styled.div`

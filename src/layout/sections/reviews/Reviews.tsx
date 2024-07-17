@@ -47,6 +47,7 @@ const StyledSlider = styled.div`
     flex-direction: column;
     justify-content: space-between;
     gap: 32px;
+    width: 100%;
     max-width: 1238px;
     min-height: 412px;
     margin: 57px auto 45px auto;

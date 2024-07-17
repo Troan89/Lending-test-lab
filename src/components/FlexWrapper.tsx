@@ -16,7 +16,7 @@ export const FlexWrapper = styled.div<Props>`
     align-items: ${props => props.align || "stretch"};
     flex-wrap: ${props => props.wrap || "nowrap"};
     width: 100%;
-    //height: 100%;
+    height: 100%;
     gap: ${props => props.gap || "0"};
 
     @media screen and (max-width: 768px) {

@@ -75,26 +75,18 @@ export const Review = (props: Props) => {
 };
 
 const SliderWrapper = styled.div`
-    max-width: 1055px;
+    width: 100%;
     height: 100%;
-    margin: 0 -10px;
-    align-items: center;
+    margin: 0 auto;
+    padding: 0 32px;
+    box-sizing: border-box;
 
     .slick-prev::before,
     .slick-next::before {
         display: none;
     }
-    //.slick-dots {
-    //    //bottom: 75px; // Измените это значение в зависимости от ваших требований по высоте
-    //}
-    .slick-prev {
-        left: -42px; // Смещение влево на 32 пикселя
-    }
-    //.slick-next {
-    //    right: -32px; // Смещение вправо на 32 пикселя (если нужно)
-    //}
-
-    .slick-prev, .slick-next {
+    .slick-prev,
+    .slick-next {
         z-index: 1;
     }
 
@@ -129,30 +121,14 @@ const SliderWrapper = styled.div`
 
 const CardWrapper = styled.div`
     max-width: 341px;
-    width: 100%;
     min-height: 316px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     cursor: pointer;
-    margin: 0 10px;
-    
-    
+    margin: 0 32px;
 
-    @media ${theme.media.tablet} {
-        max-width: 351px;
-        //margin: 0 20px;
-    }
-    @media ${theme.media.mobile} {
-        max-width: 340px;
-        min-height: 281px;
-        height: 100%;
-        
-    }
-    @media ${theme.media.miniMobile} {
-        max-width: 288px;
-        min-height: 335px;
-    }
-`;
+    box-sizing: border-box;
+`
 
 const Card = styled.div`
     background: ${theme.color.white};
