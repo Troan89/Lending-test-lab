@@ -151,10 +151,6 @@ const TextFiledContainer = styled.div`
         flex-wrap: wrap;
         gap: 20px;
     }
-    @media ${theme.media.miniMobile} {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
 `
 
 const CheckboxContainer = styled.div`
@@ -169,10 +165,6 @@ const CheckboxContainer = styled.div`
         flex-wrap: wrap;
         gap: 20px;
     }
-    @media ${theme.media.miniMobile} {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
 `
 const Checkbox = styled.div`
     max-width: 384px;
@@ -183,8 +175,6 @@ const Checkbox = styled.div`
     gap: 16px;
 
     input[type="checkbox"] {
-        //appearance: none;
-        //-webkit-appearance: none;
         width: 24px;
         height: 24px;
         border-radius: 4px;
