@@ -13,10 +13,10 @@ import smallImage from '../../assets/Lunch_atop_a_Skyscraper (320x509).png'
 import {TabMenu} from "./tabMenu/TabMenu";
 
 const items = [
-    { name: "Как это работает", id: "faqs" },
-    { name: "Вопросы и ответы", id: "fourthBlock" },
-    { name: "3-й блок", id: "thirdBlock" },
-    { name: "Форма", id: "form" }
+    {name: "Как это работает", id: "faqs"},
+    {name: "Вопросы и ответы", id: "fourthBlock"},
+    {name: "3-й блок", id: "thirdBlock"},
+    {name: "Форма", id: "form"}
 ];
 
 export const Header = () => {
@@ -25,52 +25,51 @@ export const Header = () => {
         setMenuOpen(!menuOpen);
     };
     const imageSources = [
-        { srcSet: defaultImage, media: `(max-width: 1920px)` },
-        { srcSet: largeImage, media: `(max-width: 768px)` },
-        { srcSet: mediumImage, media: `(max-width: 375px)` },
-        { srcSet: smallImage, media: `(max-width: 320px)` },
+        {srcSet: defaultImage, media: `(max-width: 1920px)`},
+        {srcSet: largeImage, media: `(max-width: 768px)`},
+        {srcSet: mediumImage, media: `(max-width: 375px)`},
+        {srcSet: smallImage, media: `(max-width: 320px)`},
     ];
     return (
-        <StyledWrapper>
+        <HeaderContainer>
             <AdaptiveImage
                 sources={imageSources}
                 defaultSrc="../../../assets/Lunch_atop_a_Skyscraper.png"
                 alt="Header background"
             />
-            <StyledHeader>
-                <StyledLogo>
+            <HeaderWrapper>
+                <HeaderLogo>
                     <Logo/>
-                </StyledLogo>
-                <NavLinks color={'var(--white-color)'}>
+                </HeaderLogo>
+                <HeaderNav color={'var(--white-color)'}>
                     <Menu menuItems={items}/>
-                </NavLinks>
-                <BurgerMenu onClick={toggleMenu}>
+                </HeaderNav>
+                <HeaderBurgerMenu onClick={toggleMenu}>
                     <div/>
                     <div/>
-                </BurgerMenu>
+                </HeaderBurgerMenu>
                 {menuOpen && (
-                    <MenuWrapper>
-                        <MenuHeader>
+                    <HeaderMenuWrapper>
+                        <HeaderMenu>
                             <Logo/>
-                            <CloseButton onClick={toggleMenu}>X</CloseButton>
-                        </MenuHeader>
+                            <HeaderCloseButton onClick={toggleMenu}>X</HeaderCloseButton>
+                        </HeaderMenu>
                         <FlexWrapper direction={"column"}>
-                                <TabMenu menuItems={items} color={'var(--gray-color)'}/>
+                            <TabMenu menuItems={items} color={'var(--gray-color)'}/>
                         </FlexWrapper>
-
-                    </MenuWrapper>
+                    </HeaderMenuWrapper>
                 )}
-            </StyledHeader>
+            </HeaderWrapper>
             <MainTitle/>
-        </StyledWrapper>
+        </HeaderContainer>
 
     );
 };
 
-const StyledWrapper = styled.header`
+const HeaderContainer = styled.header`
     display: flex;
     flex-direction: column;
-    min-height: 1024px;
+    //min-height: 1024px;
     max-width: 1920px;
     width: 100%;
     position: relative;
@@ -139,13 +138,13 @@ const StyledWrapper = styled.header`
 
 `
 
-const StyledHeader = styled.div`
+const HeaderWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
     min-height: 80px;
     z-index: 10;
-    
+
     position: relative;
 
     @media screen and (max-width: 768px) {
@@ -154,12 +153,12 @@ const StyledHeader = styled.div`
     }
 `
 
-const StyledLogo = styled.div`
+const HeaderLogo = styled.div`
     display: flex;
     gap: 9px
 `
 
-const NavLinks = styled.nav`
+const HeaderNav = styled.nav`
     display: flex;
     gap: 20px;
     color: ${({color}) => color || 'var(--white-color)'};
@@ -169,7 +168,7 @@ const NavLinks = styled.nav`
     }
 `;
 
-const BurgerMenu = styled.div`
+const HeaderBurgerMenu = styled.div`
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -188,8 +187,8 @@ const BurgerMenu = styled.div`
     }
 `
 
-const MenuWrapper = styled.div`
-    position: absolute;
+const HeaderMenuWrapper = styled.div`
+    position: fixed;
     top: 0;
     right: 0;
     max-width: 320px;
@@ -200,20 +199,20 @@ const MenuWrapper = styled.div`
     transition: .5s;
     padding: 20px;
 
-    display: flex; 
+    display: flex;
     flex-direction: column;
 
 `;
 
-const MenuHeader = styled.div`
+const HeaderMenu = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
     min-height: 80px;
-    
+
     position: relative;
-    
+
     &::before {
         content: '';
         display: inline-block;
@@ -226,7 +225,7 @@ const MenuHeader = styled.div`
     }
 `;
 
-const CloseButton = styled.div`
+const HeaderCloseButton = styled.div`
     font-size: 24px;
     cursor: pointer;
     color: black;

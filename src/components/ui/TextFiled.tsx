@@ -44,7 +44,7 @@ const StyledWrapper = styled.div`
     }
 
     &:hover, &:focus-within, &:has(input:not(:placeholder-shown)) {
-        border: 2px solid ${theme.color.gray.midGray};
+        outline: 2px solid ${theme.color.gray.midGray};
         border-radius: 4px;
         background-color: transparent;
     }

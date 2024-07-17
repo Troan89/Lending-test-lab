@@ -22,7 +22,7 @@ export const Review = (props: Props) => {
         speed: 500,
         slidesToShow: 3,
         slidesToScroll: 1,
-        // arrows: true,
+        arrows: true,
         prevArrow: <PrevArrow currentSlide={currentSlide} slideCount={reviews.length}/>,
         nextArrow: <NextArrow currentSlide={currentSlide} slideCount={reviews.length}/>,
         beforeChange: (current: number, next: number) => setCurrentSlide(next),
@@ -50,56 +50,32 @@ export const Review = (props: Props) => {
     };
 
     return (
-        <SliderWrapper>
-            <Slider {...settings}>
+        <ReviewSliderWrapper>
+            <ReviewSlider {...settings}>
                 {reviews.map((review, index) => (
-                    <CardWrapper key={index}>
-                        <Card key={index}>
-                            <CardWrapperTitle>
-                                <Img src={review.image} alt={`avatar ${review.name}`}/>
-                                <CardTitle>
-                                    <Name>{review.name}</Name>
-                                    <City>{review.city}</City>
-                                </CardTitle>
-
-                            </CardWrapperTitle>
-                            <CardContent>
-                                <Feedback>{review.feedback}</Feedback>
-                            </CardContent>
-                        </Card>
-                    </CardWrapper>
+                    <ReviewSliderCardWrapper key={index}>
+                        <ReviewSliderCard key={index}>
+                            <ReviewSliderCardTitleWrapper>
+                                <ReviewSliderCardImg src={review.image} alt={`avatar ${review.name}`}/>
+                                <ReviewSliderCardTitle>
+                                    <ReviewSliderCardName>{review.name}</ReviewSliderCardName>
+                                    <ReviewSliderCardCity>{review.city}</ReviewSliderCardCity>
+                                </ReviewSliderCardTitle>
+                            </ReviewSliderCardTitleWrapper>
+                            <ReviewSliderCardFeedback>{review.feedback}</ReviewSliderCardFeedback>
+                        </ReviewSliderCard>
+                    </ReviewSliderCardWrapper>
                 ))}
-            </Slider>
-        </SliderWrapper>
+            </ReviewSlider>
+        </ReviewSliderWrapper>
     );
 };
 
-const SliderWrapper = styled.div`
+const ReviewSliderWrapper = styled.div`
     width: 100%;
-    height: 100%;
     margin: 0 auto;
     padding: 0 32px;
     box-sizing: border-box;
-
-    .slick-prev::before,
-    .slick-next::before {
-        display: none;
-    }
-    .slick-prev,
-    .slick-next {
-        z-index: 1;
-    }
-
-    .slick-dots li button::before {
-        font-size: 8px;
-        color: ${theme.color.primary.primary};
-        padding-top: 50px;
-
-        @media ${theme.media.mobile} {
-            padding-top: 20px;
-        }
-
-    }
 
     @media ${theme.media.tablet} {
         max-width: 768px;
@@ -118,82 +94,113 @@ const SliderWrapper = styled.div`
     }
 
 `;
+const ReviewSlider = styled(Slider)`
 
-const CardWrapper = styled.div`
-    max-width: 341px;
-    min-height: 316px;
+    .slick-slide {
+        display: flex;
+        justify-content: center;
+        padding: 0 16px;
+        min-height: 316px;
+
+    }
+
+    .slick-list {
+        margin-bottom: 20px;
+    }
+
+    .slick-dots {
+        display: flex !important;
+        justify-content: center;
+        margin-top: 20px;
+
+        li {
+            margin: 0 5px;
+        }
+    }
+
+    .slick-prev::before,
+    .slick-next::before {
+        display: none;
+    }
+
+    .slick-prev,
+    .slick-next {
+        z-index: 1;
+    }
+
+    .slick-dots li button::before {
+        font-size: 8px;
+        color: ${theme.color.primary.primary};
+        padding-top: 20px;
+    }
+`;
+
+const ReviewSliderCard = styled.div`
     display: flex;
-    justify-content: space-around;
-    cursor: pointer;
-    margin: 0 32px;
+    flex-flow: column;
 
-    box-sizing: border-box;
-`
-
-const Card = styled.div`
     background: ${theme.color.white};
     border-radius: 8px;
     box-shadow: 0 5px 24px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
     padding: 22px 22px 38px;
-    gap: 20px;
-    max-width: 341px;
-    min-height: 316px;
-    
+    width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+
     @media ${theme.media.mobile} {
-        max-width: 340px;
         min-height: 281px;
         padding: 22px 22px 27px 22px;
     }
 
     @media ${theme.media.miniMobile} {
-        max-width: 288px;
         min-height: 335px;
     }
 `;
 
-const CardWrapperTitle = styled.div`
-    text-align: left;
-    min-height: 44px;
-    max-width: 237px;
+const ReviewSliderCardWrapper = styled.div`
     display: flex;
-    gap: 24px
+    justify-content: center;
+    //align-items: stretch;
+    width: 100%;
+    height: 100%;
+`
+
+
+
+const ReviewSliderCardTitleWrapper = styled.div`
+    text-align: left;
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
 `;
 
-const Img = styled.img`
+const ReviewSliderCardImg = styled.img`
     width: 44px;
     height: 44px;
     border-radius: 50%;
 `
 
-const CardTitle = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+const ReviewSliderCardTitle = styled.div`
+    display: grid;
 `
 
-const CardContent = styled.div`
-    text-align: left;
-    max-height: 192px;
-`;
-
-const Name = styled.h3`
+const ReviewSliderCardName = styled.h3`
     font-size: ${theme.typography.headline6.size};
     font-weight: ${theme.typography.headline6.weight};
     line-height: ${theme.typography.headline6.lineHeight};
 `;
 
-const City = styled.p`
+const ReviewSliderCardCity = styled.p`
     font-size: ${theme.typography.body12.size};
     line-height: ${theme.typography.body12.lineHeight};
     color: ${theme.color.gray.darkGray};
     font-weight: ${theme.typography.body12.weight};
 `;
 
-const Feedback = styled.p`
+const ReviewSliderCardFeedback = styled.div`
     font-size: ${theme.typography.body14.size};
     line-height: ${theme.typography.body14.lineHeight};
     font-weight: ${theme.typography.body14.weight};
+    margin-top: 20px;
 `;
 

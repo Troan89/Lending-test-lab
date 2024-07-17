@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import {theme} from "../../styles/Theme.styled";
 
-export const SectionTitile = styled.p`
+export const SectionTitle = styled.p`
     color: ${theme.color.dark};
     text-align: center;
     font-size: ${theme.typography.headline2.size};

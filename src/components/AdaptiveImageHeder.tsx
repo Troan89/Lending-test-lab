@@ -1,5 +1,4 @@
 import React from 'react';
-import sss from '../assets/Lunch_atop_a_Skyscraper.png'
 
 type Props = {
     sources:Sources[]
@@ -19,8 +18,7 @@ export const AdaptiveImage = (props: Props) => {
             {sources.map((source, index) => (
                 <source key={index} srcSet={source.srcSet} media={source.media}/>
             ))}
-            {/*<img src={defaultSrc} alt={alt} style={{width: '100%', height: 'auto'}}/>*/}
-            <img src={sss} alt={alt} style={{width: '100%', height: 'auto'}}/>
+            <img src={defaultSrc} alt={alt} style={{width: '100%', height: 'auto'}}/>
         </picture>
     );
 };

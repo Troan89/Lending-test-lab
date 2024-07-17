@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import {SectionTitile} from "../../../components/ui/SectionTitile";
+import {SectionTitle} from "../../../components/ui/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Icon} from "../../../components/icon/Icon";
 import {theme} from "../../../styles/Theme.styled";
@@ -15,34 +15,34 @@ export const FourthBlock = () => {
         setOpenIndex(openIndex === index ? null : index);
     };
     return (
-        <StyledSection id="fourthBlock">
-            <SectionTitile>Вопросы и ответы</SectionTitile>
+        <FourthBlockSection id="fourthBlock">
+            <SectionTitle>Вопросы и ответы</SectionTitle>
             <FlexWrapper direction={'column'} gap={'24px'}>
                 {items.map((item, index) => (
                     <FlexWrapper direction={'column'} gap={'24px'} key={index}>
-                        <BottomBorder></BottomBorder>
-                        <QuestionWrapper onClick={() => handleToggle(index)}>
-                            <Question>{item.question}</Question>
-                            <IconWrapper>
+                        <FourthBlockBottomBorder></FourthBlockBottomBorder>
+                        <FourthBlockQuestionWrapper onClick={() => handleToggle(index)}>
+                            <FourthBlockQuestion>{item.question}</FourthBlockQuestion>
+                            <FourthBlockIconWrapper>
                                 <Icon iconId={openIndex === index ? 'close' : 'open'}
                                       hoverColor={theme.color.primary.primary}
                                 />
-                            </IconWrapper>
-                        </QuestionWrapper>
+                            </FourthBlockIconWrapper>
+                        </FourthBlockQuestionWrapper>
                         {openIndex === index && (
-                            <Answer>
+                            <FourthBlockAnswer>
                                 {item.answer}
-                            </Answer>
+                            </FourthBlockAnswer>
                         )}
                     </FlexWrapper>
                 ))}
             </FlexWrapper>
-        </StyledSection>
+        </FourthBlockSection>
     );
 };
 
 
-const StyledSection = styled.section`
+const FourthBlockSection = styled.section`
     max-width: 1008px;
     width: 100%;
     min-height: 640px;
@@ -64,7 +64,7 @@ const StyledSection = styled.section`
     }
 `
 
-export const QuestionWrapper = styled.div`
+export const FourthBlockQuestionWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 48px;
@@ -76,7 +76,7 @@ export const QuestionWrapper = styled.div`
     }
 `
 
-const Question = styled.div`
+const FourthBlockQuestion = styled.div`
     font-weight: ${theme.typography.body18.bold};
     font-size: ${theme.typography.body18.size};
     line-height: ${theme.typography.body18.lineHeight};
@@ -84,12 +84,12 @@ const Question = styled.div`
     width: 100%;
 `
 
-const BottomBorder = styled.div`
+const FourthBlockBottomBorder = styled.div`
     height: 1px;
     border-bottom: 1px solid ${theme.color.gray.lightGray};
 `
 
-const Answer = styled.div`
+const FourthBlockAnswer = styled.div`
     font-size: ${theme.typography.body18.size};
     line-height: ${theme.typography.body18.lineHeight};
     color: ${theme.color.gray.darkGray};
@@ -102,6 +102,6 @@ const Answer = styled.div`
         font-weight: ${theme.typography.body16.weight};
     }
 `
-const IconWrapper = styled.div`
+const FourthBlockIconWrapper = styled.div`
     display: flex;
 `

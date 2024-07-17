@@ -55,11 +55,11 @@ const StyledMenu = styled.nav`
 
     li a {
         text-decoration: none;
-        color: ${({color}) => color || `${theme.color.white}`
-        }
+        color: ${({color}) => color || `${theme.color.white}`};
+        transition: color 0.3s, text-decoration 0.3s;
     }
 ;
-    transition: color 0.3s, text-decoration 0.3s;
+    
 
     @media (max-width: 768px) {
         color: white;

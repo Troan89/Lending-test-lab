@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import {SectionTitile} from "../../../components/ui/SectionTitile";
+import {SectionTitle} from "../../../components/ui/SectionTitle";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {TextFiled} from "../../../components/ui/TextFiled";
 import {theme} from "../../../styles/Theme.styled";
@@ -71,8 +71,7 @@ export const Form = () => {
 
     return (
         <StyledForm onSubmit={handleSubmit} id="form">
-            <FlexWrapper direction={'column'} justify={'space-between'}>
-                <SectionTitile>Отправь форму</SectionTitile>
+                <SectionTitle>Отправь форму</SectionTitle>
                 <FormContainer>
                     <TextFiledContainer>
                         <TextFiled type={'text'} labelText={'Имя'} value={name}
@@ -83,7 +82,7 @@ export const Form = () => {
                                    error={errors.phone} touched={formTouched}/>
                     </TextFiledContainer>
                     <CheckboxContainer>
-                        <Checkbox>
+                        <FormCheckbox>
                             <input
                                 type="checkbox"
                                 id="consent"
@@ -92,15 +91,13 @@ export const Form = () => {
                                 onChange={(e) => setConsent(e.target.checked)}
                                 required
                             />
-                            <Label htmlFor="consent">Я соглашаюсь, отказываюсь</Label>
-                        </Checkbox>
+                            <Label htmlFor="consent">Согласен, отказываюсь</Label>
+                        </FormCheckbox>
                         <Button type="submit">Отправить</Button>
                     </CheckboxContainer>
                     {errors.consent && <ErrorMessage>{errors.consent}</ErrorMessage>}
 
                 </FormContainer>
-            </FlexWrapper>
-
         </StyledForm>
     );
 };
@@ -111,15 +108,17 @@ const StyledForm = styled.section`
     min-height: 258px;
     display: flex;
     justify-content: space-between;
-    //padding: 0 20px;
+    flex-direction: column;
 
     @media ${theme.media.tablet} {
         max-width: 728px;
         min-height: 246px;
+        padding: 0 20px;
     }
     @media ${theme.media.mobile} {
         max-width: 343px;
         min-height: 342px;
+        padding: 0 16px;
     }
     @media ${theme.media.miniMobile} {
         max-width: 288px;
@@ -130,10 +129,10 @@ const StyledForm = styled.section`
 const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 30px;
     width: 100%;
-    min-height: 158px;
-
+    min-height: 100%;
 
     @media ${theme.media.tablet} {
         gap: 24px;
@@ -166,14 +165,12 @@ const CheckboxContainer = styled.div`
         gap: 20px;
     }
 `
-const Checkbox = styled.div`
-    max-width: 384px;
-    width: 100%;
-    min-height: 28px;
+const FormCheckbox = styled.div`
     display: flex;
     align-items: center;
-    gap: 16px;
-
+    gap: 12px; 
+    width: 100%;
+    
     input[type="checkbox"] {
         width: 24px;
         height: 24px;
@@ -181,33 +178,25 @@ const Checkbox = styled.div`
         border: 2px solid ${theme.color.gray.darkGray};
         outline: none;
     }
-
 `
 const Label = styled.label`
     font-size: ${theme.typography.body16.size};
     line-height: ${theme.typography.body16.lineHeight};
     font-weight: ${theme.typography.body16.weight};
+    width: 100%;
 `
 
 const Button = styled.button`
-    max-width: 384px;
     width: 100%;
     min-height: 64px;
     background-color: ${theme.color.primary.primary};
     color: ${theme.color.white};
-    padding: 20px 40px;
     border-radius: 4px;
     border: none;
     font-size: ${theme.typography.headline5.size};
     line-height: ${theme.typography.headline5.lineHeight};
     font-weight: ${theme.typography.headline5.weight};
     cursor: pointer;
-
-    @media ${theme.media.tablet} {
-        max-width: 352px;
-        width: 100%;
-        min-height: 64px;
-    }
 `
 
 const ErrorMessage = styled.div`

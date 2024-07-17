@@ -6,27 +6,23 @@ import {Typography} from "../../../components/ui/Typography";
 
 export const MainTitle = () => {
     return (
-        <StyledMain>
-            <Wrapper>
-                    <GroupTitle>
-                        <TitleH1>
+        <MainTitleContainer>
+            <MainTitleWrapper>
+                    <MainTitleGroup>
+                        <MainTitleTitle>
                             Говорят, никогда не поздно сменить профессию
-                        </TitleH1>
-                        {/*<Typography variant={'headline1'}>*/}
-                        {/*    Говорят, никогда не поздно сменить профессию*/}
-                        {/*</Typography>*/}
-                        <Body18>Сделай круто тестовое задание и у тебя получится</Body18>
-                    </GroupTitle>
-
-                    <Button>
+                        </MainTitleTitle>
+                        <MainTitleDescription>Сделай круто тестовое задание и у тебя получится</MainTitleDescription>
+                    </MainTitleGroup>
+                    <MainTitleButton>
                         <H5>Проще простого!</H5>
-                    </Button>
-            </Wrapper>
-        </StyledMain>
+                    </MainTitleButton>
+            </MainTitleWrapper>
+        </MainTitleContainer>
     );
 };
 
-const Wrapper = styled.div`
+const MainTitleWrapper = styled.div`
     max-width: 748px;
     min-height: 334px;
     display: flex;
@@ -44,7 +40,7 @@ const Wrapper = styled.div`
     }
 `
 
-const StyledMain = styled.div`
+const MainTitleContainer = styled.div`
     min-height: 880px;
     z-index: 1;
     display: flex;
@@ -62,7 +58,7 @@ const StyledMain = styled.div`
     }
 `
 
-const TitleH1 = styled.p`
+const MainTitleTitle = styled.p`
     font-weight: ${theme.typography.headline1.weight};
     line-height: ${theme.typography.headline1.lineHeight};
     font-size: ${theme.typography.headline1.size};
@@ -79,7 +75,7 @@ const TitleH1 = styled.p`
     }
 
 `
-const Body18 = styled.p`
+const MainTitleDescription = styled.p`
     font-weight: ${theme.typography.body18.weight};
     line-height: ${theme.typography.body18.lineHeight};
     font-size: ${theme.typography.body18.size};
@@ -90,13 +86,13 @@ const Body18 = styled.p`
         font-size: ${theme.typography.body16.size};
     }
 `
-const GroupTitle = styled.div`
+const MainTitleGroup = styled.div`
     text-align: center;
     font-weight: 600;
     max-width: 748px;
 `
 
-const Button = styled.button`
+const MainTitleButton = styled.button`
     min-width: 251px;
     min-height: 64px;
     border-radius: 4px;

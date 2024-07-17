@@ -1,18 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
-import {SectionTitile} from "../../../components/ui/SectionTitile";
+import {SectionTitle} from "../../../components/ui/SectionTitle";
 import {Faq} from "./faq/Faq";
 import {theme} from "../../../styles/Theme.styled";
 import {GridWrapper} from "../../../components/GridWrapper";
-import {Container} from "../../../components/Container";
-import {FlexWrapper} from "../../../components/FlexWrapper";
 
 export const Faqs = () => {
     return (
-        <StyledFaqs id="faqs">
-            <Container>
-                <Wrapper>
-                    <SectionTitile>Как это работает</SectionTitile>
+        <FaqsContainer id="faqs">
+                <FaqsWrapper>
+                    <SectionTitle>Как это работает</SectionTitle>
                     <GridWrapper gap={"32px"}>
                         <Faq
                             iconId={'waiting'}
@@ -31,23 +28,26 @@ export const Faqs = () => {
                             title={'Получи предложение'}
                             description={'Ну тут все просто, не я придумал правила, но думаю так и будет)))'}/>
                     </GridWrapper>
-                </Wrapper>
-            </Container>
-        </StyledFaqs>
+                </FaqsWrapper>
+        </FaqsContainer>
     );
 };
-const Wrapper = styled.div`
+const FaqsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     min-height: 281px;
+    width: 100%;
+    padding: 0 20px;
 
     @media ${theme.media.tablet} {
         gap: 42px;
     }
     @media ${theme.media.mobile} {
         gap: 26px;
+        padding: 0 16px;
     }
 `
-const StyledFaqs = styled.section`
+const FaqsContainer = styled.section`
+
 `

@@ -12,18 +12,18 @@ type Props = {
 export const Faq = (props: Props) => {
     const {iconId, title, description} = props
     return (
-        <StyledFaq>
+        <FagContainer>
             <Icon iconId={iconId} width={'72px'} height={'72px'} viewBox={'0 0 72 72'}/>
             <div>
                 <FaqTitle>{title}</FaqTitle>
                 <FaqText>{description}</FaqText>
             </div>
 
-        </StyledFaq>
+        </FagContainer>
     );
 };
 
-const StyledFaq = styled.div`
+const FagContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-around;

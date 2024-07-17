@@ -4,13 +4,13 @@ import {theme} from "../../styles/Theme.styled";
 
 export const Footer = () => {
     return (
-        <StyledFooter>
-                <Copyright>© 2021 Лаборатория интернет</Copyright>
-        </StyledFooter>
+        <FooterContainer>
+                <FooterCopyright>© 2021 Лаборатория интернет</FooterCopyright>
+        </FooterContainer>
     );
 };
 
-const StyledFooter = styled.footer`
+const FooterContainer = styled.footer`
     min-height: 88px;
     display: flex;
     align-items: center;
@@ -30,6 +30,6 @@ const StyledFooter = styled.footer`
     }
 `
 
-const Copyright = styled.small`
+const FooterCopyright = styled.small`
     
 `
